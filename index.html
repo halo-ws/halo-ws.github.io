@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="HALO is a proposed EuroSys 2027 workshop on heterogeneous accelerator orchestration and the operation of large-model systems.">
+  <title>HALO Workshop | EuroSys 2027</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&amp;family=JetBrains+Mono:wght@400;700&amp;family=Noto+Sans:wght@400..700&amp;family=Roboto+Condensed:wght@500..700&amp;display=swap">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    :root {
+      --body-font: "Noto Sans", system-ui, sans-serif;
+      --heading-font: "Roboto Condensed", "Arial Narrow", system-ui, sans-serif;
+      --mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", Consolas, monospace;
+      --halo-ink: #1a0f3d;
+      --halo-purple: #5516b0;
+      --halo-blue: #004bfa;
+      --halo-lavender: #f2edfc;
+      --halo-lavender-border: #ddd0f5;
+    }
+    body { font-family: var(--body-font); }
+    h1, h2, h3, nav { font-family: var(--heading-font); }
+    h1, h2, h3,
+    .site-header .wordmark, .site-header nav a,
+    .hero .eyebrow, .hero .subtitle, .hero .event-meta { color: var(--halo-ink); }
+    .hero .subtitle { font-family: var(--mono); }
+    .hero .event-meta {
+      background: var(--halo-lavender);
+      border: 0;
+      border-block: 1px solid var(--halo-purple);
+    }
+    .hero .button { background: var(--halo-ink); }
+    .hero .button:hover { background: #352360; }
+    .hero .button:focus-visible { outline-color: var(--halo-ink); }
+    .wordmark-icon {
+      position: relative;
+      flex: none;
+      width: 2.25rem;
+      aspect-ratio: 765 / 635;
+      overflow: hidden;
+    }
+    /* Crop the full logo around the O and its swooshes, following the gap beside the L. */
+    .wordmark-icon img {
+      position: absolute;
+      top: -12.1%;
+      left: -150.3%;
+      width: 265.5%;
+      height: auto;
+      clip-path: polygon(
+        59.6% 0, 100% 0, 100% 100%, 55% 100%, 55% 81%,
+        67% 79%, 66.5% 75.8%, 65.3% 72.6%, 64.7% 69.8%,
+        64.5% 67.6%, 59.6% 64.6%
+      );
+    }
+    .topics li { border-left-color: var(--halo-purple); }
+    .paper-types > div, #contact { background: var(--halo-lavender); border-color: var(--halo-lavender-border); }
+    #contact a { color: var(--halo-purple); }
+    .paper-types .page-limit { color: var(--halo-purple); }
+    .people li { display: flex; align-items: center; gap: .75rem; }
+    .organizer-photo {
+      flex: none;
+      width: 4rem;
+      height: 4rem;
+      border: 1px solid var(--halo-lavender-border);
+      border-radius: 50%;
+      background: var(--halo-lavender);
+      object-fit: cover;
+    }
+    #program table { font-family: var(--mono); }
+    #program thead th { background: var(--halo-ink); color: #fff; }
+
+    #dates {
+      --dates-mono: "JetBrains Mono", var(--mono);
+      --line: #493e6c;
+      --muted: #c0c8e8;
+      background: var(--halo-ink);
+      color: #fff;
+      font-family: "Inter", system-ui, sans-serif;
+      padding: 1.5rem;
+    }
+    #dates h2 { color: inherit; font: 700 1.125rem/1.4 var(--dates-mono); margin: 0; padding-bottom: .65rem; border-bottom: 1px solid var(--line); }
+    .date-list { display: grid; gap: 1rem; margin: 1.35rem 0 1rem; padding: 0; list-style: none; }
+    .date-list li { border-left: 2px solid var(--line); padding-left: 1rem; font-weight: 500; }
+    .date-list li:first-child { border-left-color: var(--halo-blue); }
+    .date-list time { display: block; color: var(--muted); font: .875rem/1.5 var(--dates-mono); }
+    #dates p { font-size: .875rem; }
+    .date-actions { margin-top: 1.25rem; padding-top: 1rem; border-top: 1px solid var(--line); }
+    .date-actions .button { display: block; background: var(--halo-blue); text-align: center; font-size: .875rem; font-weight: 700; }
+    .date-actions .button:hover { background: #2659e6; }
+    .date-actions .button:focus-visible { outline-color: #c0c8e8; }
+  </style>
+</head>
+<body id="top">
+  <a class="skip-link" href="#about">Skip to content</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="wordmark" href="#top">
+        <span class="wordmark-icon"><img src="./img/HALO_Logo.png" alt="" width="2031" height="774"></span>
+        HALO Workshop
+      </a>
+      <nav aria-label="Main navigation">
+        <a href="#about">Overview</a>
+        <a href="#topics">Topics</a>
+        <a href="#program">Program</a>
+        <a href="#dates">Dates</a>
+        <a href="#organizers">Organizers</a>
+        <a class="nav-cta" href="#submissions">Call for Papers</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" aria-labelledby="title"
+      style="background:
+        linear-gradient(rgba(248, 245, 255, .22), rgba(225, 230, 255, .40)),
+        linear-gradient(#7b56c34d, #6549b768),
+        url('./img/morocco-header.png') center bottom / cover no-repeat #ebe5fa;
+        background-blend-mode: normal, color, normal;">
+      <div class="container">
+        <p class="eyebrow">EuroSys 2027 Workshop</p>
+        <h1 id="title">
+          <img src="./img/HALO_Logo.png" alt="HALO" width="416" height="159"
+            style="display: block; max-width: 100%; height: auto; margin-inline: auto;">
+        </h1>
+        <p class="subtitle">Heterogeneous Accelerator Lifecycle and<br class="wide-break"> Orchestration for Large-Model Systems</p>
+        <div class="event-meta">
+          <span><time datetime="2027-04-19">April 19, 2027</time> (tentative)</span>
+          <span>Half-day, in person</span>
+        </div>
+        <a class="button" href="#submissions">Call for Papers</a>
+      </div>
+    </section>
+
+    <div class="container content-layout">
+      <div class="sections">
+        <section id="about" tabindex="-1">
+          <h2>Overview</h2>
+          <p>Large-model workloads increasingly run across different generations and types of accelerators, with diverse memory, storage, and network infrastructure. Where a workload runs affects how much state must move, how resources can be shared, and how the system recovers from failures.</p>
+          <p>HALO brings together researchers and practitioners in operating systems, distributed systems, runtimes, computer architecture, and industrial AI infrastructure to discuss how to operate these systems reliably across training, post-training, fine-tuning, inference, and distributed serving.</p>
+        </section>
+
+        <section id="topics">
+          <h2>Topics of Interest</h2>
+          <ul class="topics">
+            <li><h3>Accelerator orchestration</h3><p>Resource discovery, placement and scheduling, virtualization, isolation, and elasticity across heterogeneous devices.</p></li>
+            <li><h3>Model and runtime state</h3><p>Placement, movement, caching, and persistence of weights, adapters, checkpoints, activations, and KV caches.</p></li>
+            <li><h3>Operating shared infrastructure</h3><p>Observability, failure recovery, multi-tenant fairness, service-level objectives, and energy- and cost-aware resource management.</p></li>
+          </ul>
+        </section>
+
+        <section id="submissions">
+          <h2>Call for Papers</h2>
+          <p>HALO welcomes original systems research, industrial experience, early-stage ideas, position papers, negative results, and demonstrations. Contributions focused on models, kernels, or compilers should include a clear systems contribution.</p>
+          <div class="paper-types">
+            <div><h3>Systems and experience papers</h3><p class="page-limit">Up to 6 pages</p><p>Original research, deployed systems, or substantial operational experience.</p></div>
+            <div><h3>Short papers</h3><p class="page-limit">Up to 2 pages</p><p>Early-stage ideas, positions, negative results, industrial challenges, or demonstrations.</p></div>
+          </div>
+          <p>The proposed submission format is ACM two-column, with references excluded from the page limit. The workshop plans to use HotCRP for double-blind review. The submission link is pending.</p>
+          <p>ACM Digital Library proceedings are planned, subject to confirmation. The proposed format requires at least one author of each accepted contribution to register and present in person.</p>
+        </section>
+
+        <section id="program">
+          <h2>Tentative Program</h2>
+          <p>The proposed morning schedule includes an invited keynote, paper presentations, and a roundtable on where control should reside across device runtimes, cluster schedulers, and model-serving systems.</p>
+          <table>
+            <thead><tr><th scope="col">Time</th><th scope="col">Session</th></tr></thead>
+            <tbody>
+              <tr><td>09:00–09:10</td><td>Welcome and workshop goals</td></tr>
+              <tr><td>09:10–10:00</td><td>Invited keynote on operating heterogeneous accelerator fleets</td></tr>
+              <tr><td>10:00–11:00</td><td>Systems and experience paper presentations</td></tr>
+              <tr><td>11:00–11:30</td><td>Coffee break</td></tr>
+              <tr><td>11:30–12:10</td><td>Paper presentation and lightning talks</td></tr>
+              <tr><td>12:10–12:55</td><td>Panel and roundtable</td></tr>
+              <tr><td>12:55–13:00</td><td>HALO Systems Agenda and closing remarks</td></tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section id="organizers">
+          <h2>Organizers</h2>
+          <ul class="people">
+            <li>
+              <span class="organizer-photo" aria-hidden="true"></span>
+              <div><strong>Henk Corporaal</strong><span>Eindhoven University of Technology</span></div>
+            </li>
+            <li>
+              <span class="organizer-photo" aria-hidden="true"></span>
+              <div><strong>Dimitrios Soudris</strong><span>National Technical University of Athens</span></div>
+            </li>
+            <li>
+              <span class="organizer-photo" aria-hidden="true"></span>
+              <div><strong>Muhammad Shafique</strong><span>New York University Abu Dhabi</span></div>
+            </li>
+            <li>
+              <span class="organizer-photo" aria-hidden="true"></span>
+              <div><strong>Christina Giannoula</strong><span>Max Planck Institute for Software Systems</span></div>
+            </li>
+            <li>
+              <span class="organizer-photo" aria-hidden="true"></span>
+              <div><strong>Yubin Xia</strong><span>Shanghai Jiao Tong University</span></div>
+            </li>
+            <li>
+              <span class="organizer-photo" aria-hidden="true"></span>
+              <div><strong>Zheng Li</strong><span>Huawei European Research Institute</span></div>
+            </li>
+            <li>
+              <span class="organizer-photo" aria-hidden="true"></span>
+              <div><strong>Stefano Corda</strong><span>Huawei Technologies Switzerland AG</span></div>
+            </li>
+            <li>
+              <img class="organizer-photo" src="./img/dimosthenis_masouros_stylized.png" alt="" width="64" height="64">
+              <div><strong>Dimosthenis Masouros</strong><span>National Technical University of Athens</span></div>
+            </li>
+          </ul>
+          <p>Program committee membership is pending.</p>
+        </section>
+      </div>
+
+      <aside class="sidebar" aria-label="Dates and contact">
+        <section id="dates" class="side-card">
+          <h2>Important Dates</h2>
+          <ul class="date-list">
+            <li><time datetime="2027-02-12">February 12, 2027</time><span>Paper submission</span></li>
+            <li><time datetime="2027-03-05">March 5, 2027</time><span>Author notification</span></li>
+            <li><time datetime="2027-03-19">March 19, 2027</time><span>Camera-ready deadline</span></li>
+            <li><time datetime="2027-04-19">April 19, 2027</time><span>Workshop date</span></li>
+          </ul>
+          <p>All dates are tentative. Submission-related deadlines are at 23:59 Anywhere on Earth (AoE).</p>
+          <div class="date-actions">
+            <a class="button" href="#submissions">Submission details</a>
+          </div>
+        </section>
+        <section class="side-card" id="contact">
+          <h2>Contact</h2>
+          <p>For workshop inquiries, contact <a href="mailto:demo.masouros@microlab.ntua.gr">Dimosthenis Masouros</a>.</p>
+        </section>
+      </aside>
+    </div>
+  </main>
+
+  <footer><div class="container"><span>HALO Workshop</span><a href="#top">Back to top</a></div></footer>
+</body>
+</html>
