@@ -29,6 +29,8 @@
       border: 0;
       border-block: 1px solid var(--halo-purple);
     }
+    .event-meta > span { display: inline-flex; align-items: center; gap: .45rem; }
+    .event-meta svg { flex: none; color: var(--halo-purple); }
     .hero .button { background: var(--halo-ink); }
     .hero .button:hover { background: #352360; }
     .hero .button:focus-visible { outline-color: var(--halo-ink); }
@@ -124,8 +126,20 @@
         </h1>
         <p class="subtitle">Heterogeneous Accelerator Lifecycle and<br class="wide-break"> Orchestration for Large-Model Systems</p>
         <div class="event-meta">
-          <span><time datetime="2027-04-19">April 19, 2027</time> (tentative)</span>
-          <span>Half-day, in person</span>
+          <span>
+            <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+              <rect x="3" y="5" width="18" height="16" rx="2"/>
+              <path d="M7 3v4m10-4v4M3 10h18"/>
+            </svg>
+            <span><time datetime="2027-04-19">April 19, 2027</time> (tentative)</span>
+          </span>
+          <span>
+            <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round">
+              <path d="M20 10c0 5-8 11-8 11S4 15 4 10a8 8 0 1 1 16 0Z"/>
+              <circle cx="12" cy="10" r="2.5"/>
+            </svg>
+            Rabat, Morocco
+          </span>
         </div>
         <a class="button" href="#submissions">Call for Papers</a>
       </div>
